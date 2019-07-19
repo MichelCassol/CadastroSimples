@@ -1,0 +1,23 @@
+.layout-cabecalho {
+  height: 90px;
+  border-bottom: 1px solid #ccc;
+  background-color: #07058a9a;
+}
+
+.layout-rodape {
+  margin-bottom: 0;
+  padding: 10px 0;
+  background-color: #058f3a;
+  color: #fff;
+  text-align: center;
+}
+
+@media(max-width: 749px) {
+  .layout-planos .row > div:not(.ultima-coluna) {
+    margin-bottom: 40px;
+  }
+}
+
+.layout-assinatura {
+  padding: 40px 0;
+}

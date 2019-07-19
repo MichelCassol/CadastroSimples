@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atividade Spring</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="/css/componentes.css">
+        <link rel="stylesheet" type="text/css" href="/css/layout.css">
+        <link rel="stylesheet" type="text/css" href="/css/base.css">
+        <script type="text/javascript">
+	        function fMasc(objeto,mascara) {
+				obj=objeto
+				masc=mascara
+				setTimeout("fMascEx()",1)
+			}
+			function fMascEx() {
+				obj.value=masc(obj.value)
+			}
+	        function mCPF(cpf){
+				cpf=cpf.replace(/\D/g,"")
+				cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+				cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+				cpf=cpf.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
+				return cpf
+			}
+        </script>
+    </head>
+    <body>
+        <header class="layout-cabecalho">
+            <div class="container">
+                <nav class="navegacao">
+                    <h1>Preencha com suas informações pessoais</h1>
+                </nav>
+            </div>
+        </header>
+        <section class="layout-assinatura">
+            <div class="container">
+                <form method="POST">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="grupo-entrada">
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" class="campo" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="grupo-entrada">
+                                <label for="cpf">CPF</label>
+                                <input type="text" id="cpf" name="cpf" class="campo" required onkeydown="javascript: fMasc( this, mCPF );" maxlength="14">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="grupo-entrada">
+                                <label for="dataNascimento">Data de nascimento</label>
+                                <input type="date" id="dataNascimento" name="dataNascimento" class="campo" required>
+                            </div>
+                        </div>
+
+                        <div class="grupo-entrada">
+                            <label>Sexo</label>
+                            <label for="masculino">
+                                <input type="radio" id="masculino" name="sexo" value="1" required>
+                                Masculino
+                            </label>
+                            <label for="feminino">
+                                <input type="radio" id="feminino" name="sexo" value="0" required>
+                                Feminino
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="grupo-entrada">
+                                <label for="estadoCivil">Estado Civil</label>
+                                <select name="estadoCivil" id="estadoCivil" class="campo" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="s">Solteiro</option>
+                                    <option value="c">Casado</option>
+                                </select>
+                            </div>    
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="grupo-entrada">
+                                <label for="rendaMensal">Renda Mensal</label>
+                                <input type="text" id="rendaMensal" name="rendaMensal" class="campo" required>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Endereço</h2>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="grupo-entrada">
+                                <label for="logradouro">Logradouro</label>
+                                <input type="text" name="logradouro" id="logradouro" class="campo" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="grupo-entrada">
+                                <label for="numeroCasa">Número</label>
+                                <input type="text" name="numeroCasa" id="numeroCasa" class="campo" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-3"> 
+                            <div class="grupo-entrada">
+                                <label for="complemento">Complemento</label>
+                                <input type="text" name="complemento" id="complemento" class="campo" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="grupo-entrada">
+                                <label for="estado">Estado</label>
+                                <select name="estado" id="estado" class="campo" required>
+                                    <option value="">Selecione...</option>
+                                    <option value="pr">Paraná</option>
+                                    <option value="sc">Santa Catarina</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="grupo-entrada">
+                                <label for="cidade">Cidade</label>
+                                <input type="text" name="cidade" id="cidade" class="campo" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <div class="grupo entrada">
+                                <button class="botao botao--principal">Cadastrar</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-1">
+                            <div class="grupo-entrada">
+                                <button type="button" class="botao botao--principal" onclick="location.href='/'">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

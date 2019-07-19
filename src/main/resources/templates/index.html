@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Atividade Spring</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/componentes.css">
+        <link rel="stylesheet" type="text/css" href="css/layout.css">
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+    </head>
+    <body>
+        <header class="layout-cabecalho">
+            <div class="container">
+                <nav class="navegacao">
+                    <h1>Listagem de cadastros</h1>
+                </nav>
+            </div>
+        </header>
+        <section class="layout-assinatura">
+            <div class="container">
+                <form>
+                    <div class="col-sm-12">
+                        <table class="table">
+                            <tr>
+                                <th>Nome</th>
+                                <th>CPF</th>
+                                <th>Cidade</th>
+                            </tr>
+                            <tr th:each="lista : ${lista}">
+                            	<td th:text="${lista.nome}"></td>
+                            	<td th:text="${lista.cpf}"></td>
+                            	<td th:text="${lista.cidade}"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <div class="grupo-entrada">
+                                <button type="button" class="botao botao--principal" onclick="location.href='/form'">Novo</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>
